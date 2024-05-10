@@ -7,7 +7,7 @@
     <h1>Radiance Field API</h1>
 
     <h2>Upload Files</h2>
-    <form action="/upload" method="post" enctype="multipart/form-data" target="_blank">
+    <form action="http://34.172.128.86:8000/upload" method="post" enctype="multipart/form-data" target="_blank">
         <input type="file" name="files" multiple>
         <input type="submit" value="Upload">
     </form>
@@ -31,7 +31,7 @@
     <script>
         function checkStatus() {
             const orderId = document.getElementById('status_order_id').value;
-            const url = `/status/${orderId}`;
+            const url = `http://34.172.128.86:8000/status/${orderId}`;
 
             fetch(url)
                 .then(response => response.json())
@@ -46,7 +46,7 @@
 
         function downloadFiles() {
             const orderId = document.getElementById('download_order_id').value;
-            const url = `/download/${orderId}`;
+            const url = `http://34.172.128.86:8000/download/${orderId}`;
 
             window.location.href = url;
         }
